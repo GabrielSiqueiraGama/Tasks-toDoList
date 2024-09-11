@@ -15,7 +15,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista de taregas'),
+        title: const Text('Lista de tarefas'),
         backgroundColor: Colors.green,
       ),
       body: Consumer<TaskProvider>(
@@ -47,14 +47,16 @@ class _TaskListScreenState extends State<TaskListScreen> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const TaskAddScreen(),
-          ),
-        );
-      }),
+      floatingActionButton: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const TaskAddScreen(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.add)),
     );
   }
 }
